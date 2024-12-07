@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product CRUD</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        {% block content %}
+        <h2>Update Car </h2>
+        <form method="POST">
+        {% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label">Car Name</label>
+            <input type="text" name="name" class="form-control" value="{{form.name.value}}" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="model" class="form-label">Car Model</label>
+            <input type="text" name="model" class="form-control" value="{{form.model.value}}" id="model">
+          </div>
+          <div class="mb-3">
+              <label for="brand" class="form-label">Car Brand</label>
+              <input type="text" name="brand" class="form-control" value="{{form.brand.value}}" id="brand">
+          </div>
+          <div class="mb-3">
+              <label for="price" class="form-label">Car Price</label>
+              <input type="number" name="price" class="form-control" value="{{form.price.value}}" id="price">
+          </div>
+        <button type="submit" type="submit" class="btn btn-success" name="update">Save</button>
+        <a type="button" class="btn btn-danger" onclick="window.history.back();">Cancel</a>
+        </form>
+        {% endblock content %}
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
