@@ -58,5 +58,6 @@ def import_csv(request):
                 price=column[3],
             )
         return redirect('car_list')
+    
 
     return render(request, 'csvcrud/import_csv.html')
